@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_send_root"
+              name="SMS's"
+              sequence="10"/>
+    <menuitem id="menu_send_sms"
+              name="Messages"
+              parent="menu_send_root"
+              sequence="10"/>
+
+</odoo>

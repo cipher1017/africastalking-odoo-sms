@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sms_form" model="ir.ui.view">
+        <field name="name">africas.sms.form</field>
+        <field name="model">africas.sms</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="sender"/>
+                        <field name="recipients"/>
+                        <field name="message"/>
+                        <button name="send_sms" string="Send" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_sms_tree" model="ir.ui.view">
+        <field name="name">africas.sms.tree</field>
+        <field name="model">africas.sms</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sender"/>
+                <field name="message"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_sent_messages">
+        <field name="name">Send Sms</field>
+        <field name="res_model">africas.sms</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_send_sent"
+              name="Sent message"
+              parent="menu_send_sms"
+              action="action_sent_messages"
+              sequence="10"/>
+</odoo>
